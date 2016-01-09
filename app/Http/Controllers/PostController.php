@@ -67,7 +67,7 @@ class PostController extends Controller
         return $comment->toArray();
     }
 
-    public function postCreateLargeData(Request $request)
+    public function postCreatelargedata(Request $request)
     {
         $randCount = rand(5,30);
 
