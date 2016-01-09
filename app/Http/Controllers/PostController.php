@@ -72,7 +72,7 @@ class PostController extends Controller
         $limit = $request->get('limit',10);
         $page = $request->get('page',1);
 
-        $someComments = TestComment::where('id', '>', 8)->paginate($limit,['*'],'pagename',$page);
+        $someComments = TestComment::where('id', '>', 0)->paginate($limit,['*'],'pagename',$page);
 
         $methods = get_class_methods($someComments);
         //var_dump($methods);
