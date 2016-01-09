@@ -43,7 +43,7 @@ class PostController extends Controller
 
         $comment->title = $title;
         $comment->content = $content;
-
+        
         $ret = $comment->update();
 
         //var_dump($ret);
