@@ -22,7 +22,7 @@ class PostController extends Controller
 
     public function getAbout()
     {
-        echo '关于';
+        echo '关于about';
     }
 
     public function postAbout2(Request $request)
