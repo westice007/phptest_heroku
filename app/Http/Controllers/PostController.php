@@ -67,6 +67,26 @@ class PostController extends Controller
         return $comment->toArray();
     }
 
+    public function postCreateLargeData(Request $request)
+    {
+        $randCount = rand(5,30);
+
+        for ($i=0; $i < $randCount; $i++) { 
+            # code...
+            $title = rand(2,100).'随机标题'.rand(100,1000).'😄';
+            $content = rand(2,100).'随机内容'.rand(100,1000).'😄';
+
+            $comment = new TestComment;
+
+            $comment->title = $title;
+            $comment->content = $content;
+
+            $comment->save();
+        }
+
+        return '产生了'.$randCount.'条数据';
+    }
+
     public function anyCommentlist(Request $request)
     {
         $limit = $request->get('limit',10);
